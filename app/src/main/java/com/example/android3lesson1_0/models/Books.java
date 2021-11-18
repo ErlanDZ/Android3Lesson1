@@ -1,6 +1,8 @@
 package com.example.android3lesson1_0.models;
 
-public class Books {
+import java.io.Serializable;
+
+public class Books implements Serializable {
     private  String title;
     private String description;
     private int image;

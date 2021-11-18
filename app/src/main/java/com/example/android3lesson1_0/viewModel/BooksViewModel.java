@@ -1,4 +1,4 @@
-package com.example.android3lesson1_0.ui.activity;
+package com.example.android3lesson1_0.viewModel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -9,20 +9,14 @@ import com.example.android3lesson1_0.models.Books;
 
 import java.util.List;
 
-public class MainViewModel extends ViewModel {
-    private  final Client client = new Client();
+public class BooksViewModel extends ViewModel {
+    private final Client client = new Client();
     private final MutableLiveData<List<Books>> _dataBooks = new MutableLiveData<>();
-    public MutableLiveData<Books> mutableLiveData = new MutableLiveData<>();
 
     public LiveData<List<Books>> dataBooks = _dataBooks;
 
 
-    public void fetchData(){
+    public void fetchData() {
         _dataBooks.setValue(client.fetchBooks());
     }
-
-    public void getBook(Books model){
-        mutableLiveData.setValue(model);
-    }
-
 }
